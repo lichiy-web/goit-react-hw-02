@@ -5,11 +5,11 @@
     box-sizing: border-box;
     padding: 1em;
 }
-
+/* 
 .feedbackItem {
-    /* border: 1px solid #f00; */
+    border: 1px solid #f00;
     
-}
+} */
 
 .valueContainer {
     display: flex;
