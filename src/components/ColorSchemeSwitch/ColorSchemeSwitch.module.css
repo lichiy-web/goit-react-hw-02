@@ -7,14 +7,14 @@
     padding: 0.2em;
     display: flex;
     justify-content: start;
-    transition-property: background-color, color, justify-content;
-    transition-duration: 1000ms;
+    transition-property: background-color, justify-content;
+    transition-duration: 500ms;
 }
 
 .btn.isDarkScheme {
     justify-content: end;
     background-color: #656565;
-    color: #ffff;
+    color: #ffffff;
 }
 
 .btn>.toggle {
@@ -28,5 +28,13 @@
     width: var(--btn-size);
     height: var(--btn-size);
     border-radius: 50%;
+
+    transition-property: color, border-color;
+    transition-duration: 500ms;
+}
+
+.btn>.toggle.isDarkScheme {
+    color: #ffffff;
+    border-color: #ffffff;
 }
 
