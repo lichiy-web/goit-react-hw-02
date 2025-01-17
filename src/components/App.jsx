@@ -18,7 +18,9 @@ function App() {
     JSON.parse(localStorage.getItem('reviews')) ?? initReviews()
   );
 
-  const [isDarkScheme, setIsDarkScheme] = useState(false);
+  const [isDarkScheme, setIsDarkScheme] = useState(
+    JSON.parse(localStorage.getItem('isDarkScheme')) ?? false
+  );
 
   const totalFeedback = Object.values(reviews).reduce(
     (prev, cur) => (prev += cur)
@@ -40,6 +42,10 @@ function App() {
   useEffect(() => {
     localStorage.setItem('reviews', JSON.stringify(reviews));
   }, [reviews]);
+
+  useEffect(() => {
+    localStorage.setItem('isDarkScheme', JSON.stringify(isDarkScheme));
+  }, [isDarkScheme]);
 
   return (
     <div className="reviewsContainer">
