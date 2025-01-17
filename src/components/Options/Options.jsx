@@ -2,9 +2,7 @@ import css from './Options.module.css';
 
 // import React from 'react'
 
-const Options = ({ reviews, setReviews }) => {
-  const total = Object.values(reviews).reduce((prev, cur) => (prev += cur));
-
+const Options = ({ reviews, totalFeedback, updateFeedback, resetFeedback }) => {
   return (
     <div className={css.optionsContainer}>
       {Object.keys(reviews).map(reviewType => {
@@ -12,29 +10,15 @@ const Options = ({ reviews, setReviews }) => {
           <button
             key={reviewType}
             className={'btn' + reviewType.replace(/^./i, s => s.toUpperCase())}
-            onClick={() =>
-              setReviews({
-                ...reviews,
-                [reviewType]: reviews[reviewType] + 1,
-              })
-            }
+            onClick={() => updateFeedback(reviewType)}
           >
             {reviewType}
           </button>
         );
       })}
 
-      {total > 0 && (
-        <button
-          className={css.btnReset}
-          onClick={() =>
-            setReviews(
-              Object.fromEntries(
-                Object.keys(reviews).map(revType => [revType, 0])
-              )
-            )
-          }
-        >
+      {totalFeedback > 0 && (
+        <button className={css.btnReset} onClick={() => resetFeedback()}>
           Reset
         </button>
       )}

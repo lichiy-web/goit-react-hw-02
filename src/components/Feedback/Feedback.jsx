@@ -1,10 +1,7 @@
 import css from './Feedback.module.css';
 
-// import React from 'react'
-
-const Feedback = ({ reviews }) => {
-  const total = Object.values(reviews).reduce((prev, cur) => (prev += cur));
-  const totalPositive = reviews.good / total;
+const Feedback = ({ reviews, totalFeedback }) => {
+  const positiveFeedback = Math.round((100 * reviews.good) / totalFeedback);
 
   return (
     <div className={css.feedbackContainer}>
@@ -21,8 +18,8 @@ const Feedback = ({ reviews }) => {
         );
       })}
 
-      <div className={css.reviewsTotal}>Total: {total}</div>
-      <div className={css.totalPositive}>Positive: {'80%'}</div>
+      <div className={css.reviewsTotal}>Total: {totalFeedback}</div>
+      <div className={css.positiveFeedback}>Positive: {positiveFeedback}%</div>
     </div>
   );
 };
