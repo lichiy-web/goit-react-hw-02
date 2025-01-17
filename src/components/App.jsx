@@ -4,6 +4,7 @@ import Description from './Description/Description';
 import Feedback from './Feedback/Feedback';
 import Options from './Options/Options';
 import Notification from './Notification/Notification';
+import ColorSchemeSwitch from './ColorSchemeSwitch/ColorSchemeSwitch';
 
 function App() {
   const initReviews = () => ({
@@ -17,6 +18,8 @@ function App() {
     JSON.parse(localStorage.getItem('reviews')) ?? initReviews()
   );
 
+  const [isDarkScheme, setIsDarkScheme] = useState(false);
+
   const totalFeedback = Object.values(reviews).reduce(
     (prev, cur) => (prev += cur)
   );
@@ -29,17 +32,21 @@ function App() {
   };
 
   const resetFeedback = () => {
-    setReviews(prev =>
-      Object.fromEntries(Object.keys(prev).map(reviewType => [reviewType, 0]))
-    );
+    setReviews(() => initReviews());
   };
+
+  const toggleColorScheme = () => setIsDarkScheme(prev => !prev);
 
   useEffect(() => {
     localStorage.setItem('reviews', JSON.stringify(reviews));
   }, [reviews]);
 
   return (
-    <div className="reviews-container">
+    <div className="reviewsContainer">
+      <ColorSchemeSwitch
+        isDarkScheme={isDarkScheme}
+        toggleColorScheme={toggleColorScheme}
+      />
       <Description />
       <Options
         reviews={reviews}

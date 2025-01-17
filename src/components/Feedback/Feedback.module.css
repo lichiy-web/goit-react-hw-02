@@ -1,0 +1,31 @@
+.feedbackContainer {
+    --value-container-width: 30%;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 1em;
+}
+
+.feedbackItem {
+    /* border: 1px solid #f00; */
+    
+}
+
+.valueContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: baseline;
+    width: var(--value-container-width);
+    padding-left: 2em;
+}
+
+.chartContainer {
+    width: calc(100% - var(--value-container-width));
+}
+
+.reviewItem {
+    font-size: 1.2em;
+    text-transform: capitalize;
+    font-weight: 600;
+}

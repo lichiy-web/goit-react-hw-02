@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import css from './Options.module.css';
 
 // import React from 'react'
@@ -9,7 +10,7 @@ const Options = ({ reviews, totalFeedback, updateFeedback, resetFeedback }) => {
         return (
           <button
             key={reviewType}
-            className={'btn' + reviewType.replace(/^./i, s => s.toUpperCase())}
+            className={clsx(css.btn, css[reviewType])}
             onClick={() => updateFeedback(reviewType)}
           >
             {reviewType}
