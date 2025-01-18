@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import clsx from 'clsx';
 import Description from './Description/Description';
 import Feedback from './Feedback/Feedback';
 import Options from './Options/Options';
@@ -48,23 +49,26 @@ function App() {
   }, [isDarkScheme]);
 
   return (
-    <div className="reviewsContainer">
-      <ColorSchemeSwitch
-        isDarkScheme={isDarkScheme}
-        toggleColorScheme={toggleColorScheme}
-      />
-      <Description />
-      <Options
-        reviews={reviews}
-        totalFeedback={totalFeedback}
-        updateFeedback={updateFeedback}
-        resetFeedback={resetFeedback}
-      />
-      {totalFeedback > 0 ? (
-        <Feedback reviews={reviews} totalFeedback={totalFeedback} />
-      ) : (
-        <Notification />
-      )}
+    <div className={clsx('main-background', { isDarkScheme: isDarkScheme })}>
+      <div className={clsx('reviewsContainer', { isDarkScheme: isDarkScheme })}>
+        <ColorSchemeSwitch
+          isDarkScheme={isDarkScheme}
+          toggleColorScheme={toggleColorScheme}
+        />
+        <Description />
+        <Options
+          reviews={reviews}
+          totalFeedback={totalFeedback}
+          updateFeedback={updateFeedback}
+          resetFeedback={resetFeedback}
+          isDarkScheme={isDarkScheme}
+        />
+        {totalFeedback > 0 ? (
+          <Feedback reviews={reviews} totalFeedback={totalFeedback} />
+        ) : (
+          <Notification />
+        )}
+      </div>
     </div>
   );
 }

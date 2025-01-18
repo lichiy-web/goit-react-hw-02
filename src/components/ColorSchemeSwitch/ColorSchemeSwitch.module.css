@@ -1,21 +1,19 @@
 .btn {
   --btn-size: 1.3em;
   text-transform: capitalize;
-  box-shadow: 0 0 5px #e5e5e5;
+  box-shadow: 0 0 5px var(--shadow-color-btn-light-scheme);
   width: calc(var(--btn-size) * 3);
   margin: 0 0 0 auto;
   padding: 0.2em;
   display: flex;
   justify-content: start;
-  transition-property: background-color, justify-content;
-  transition-duration: 500ms;
-  /* align-items: center; */
+  transition-property: background-color, left, right;
+  transition-duration: var(--tr-duration);
 }
 
 .btn.isDarkScheme {
   justify-content: end;
-  background-color: #656565;
-  color: #ffffff;
+  background-color: var(--background-button-dark-scheme);
 }
 
 .btn > .toggle {
@@ -23,9 +21,8 @@
   font-size: var(--btn-size);
   display: flex;
   justify-content: center;
-  /* text-align: center; */
-  border: 2px solid #656565;
-  color: #656565;
+  border: 2px solid var(--color-dark-scheme);
+  color: var(--color-toggle-light-scheme);
   width: var(--btn-size);
   height: var(--btn-size);
   border-radius: 50%;
@@ -35,6 +32,6 @@
 }
 
 .btn > .toggle.isDarkScheme {
-  color: #ffffff;
-  border-color: #ffffff;
+  color: var(--color-dark-scheme);
+  border-color: var(--color-dark-scheme);
 }

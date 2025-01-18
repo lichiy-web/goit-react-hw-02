@@ -1,31 +1,49 @@
 #root {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.main-background {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  transition-property: color, background;
+  transition-duration: var(--tr-duration);
+}
+
+.main-background.isDarkScheme {
+  background-color: var(--background-dark-scheme);
+}
+
+.reviewsContainer {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
   display: flex;
   flex-direction: column;
-  /* background-color: #f1f1f1; */
-  /* background: linear-gradient(#ffffff, #f1f1f1, #ffffff); */
-  background: linear-gradient(to right,#ffffff,#f1f1f1, #ffffff );
+  background: linear-gradient(
+    to right,
+    var(--background-light-scheme),
+    var(--background-feed-light-scheme),
+    var(--background-light-scheme)
+  );
 }
 
-.reviewsContainer{
-  
-} 
-
-/* .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.reviewsContainer.isDarkScheme {
+  background: linear-gradient(
+    to right,
+    var(--background-dark-scheme),
+    var(--background-feed-dark-scheme),
+    var(--background-dark-scheme)
+  );
+  color: var(--color-dark-scheme);
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-} */
 
 @keyframes logo-spin {
   from {

@@ -1,11 +1,17 @@
 .optionsContainer {
-    padding: 1em;
-    display: flex;
-    justify-content: left;
-    gap: 2em;
+  padding: 1em;
+  display: flex;
+  justify-content: left;
+  gap: 2em;
 }
 
 .btn {
-    text-transform: capitalize;
-    box-shadow: 0 0 5px #e5e5e5;
+  text-transform: capitalize;
+  box-shadow: 0 0 5px var(--shadow-color-btn-light-scheme);
+}
+
+.btn.isDarkScheme {
+  background-color: var(--background-button-dark-scheme);
+  color: var(--color-dark-scheme);
+  box-shadow: 0 0 5px var(--shadow-color-btn-light-scheme);
 }
