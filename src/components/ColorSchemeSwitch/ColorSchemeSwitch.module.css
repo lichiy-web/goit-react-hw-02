@@ -1,40 +1,40 @@
 .btn {
-    --btn-size: 1.3em;
-    text-transform: capitalize;
-    box-shadow: 0 0 5px #e5e5e5;
-    width: calc(var(--btn-size)*3);
-    margin: 0 0 0 auto;
-    padding: 0.2em;
-    display: flex;
-    justify-content: start;
-    transition-property: background-color, justify-content;
-    transition-duration: 500ms;
+  --btn-size: 1.3em;
+  text-transform: capitalize;
+  box-shadow: 0 0 5px #e5e5e5;
+  width: calc(var(--btn-size) * 3);
+  margin: 0 0 0 auto;
+  padding: 0.2em;
+  display: flex;
+  justify-content: start;
+  transition-property: background-color, justify-content;
+  transition-duration: 500ms;
+  /* align-items: center; */
 }
 
 .btn.isDarkScheme {
-    justify-content: end;
-    background-color: #656565;
-    color: #ffffff;
+  justify-content: end;
+  background-color: #656565;
+  color: #ffffff;
 }
 
-.btn>.toggle {
-    font-family: monospace;
-    font-size: var(--btn-size);
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    border: 2px solid #656565;
-    color:#656565;
-    width: var(--btn-size);
-    height: var(--btn-size);
-    border-radius: 50%;
+.btn > .toggle {
+  font-family: monospace;
+  font-size: var(--btn-size);
+  display: flex;
+  justify-content: center;
+  /* text-align: center; */
+  border: 2px solid #656565;
+  color: #656565;
+  width: var(--btn-size);
+  height: var(--btn-size);
+  border-radius: 50%;
 
-    transition-property: color, border-color;
-    transition-duration: 500ms;
+  transition-property: color, border-color;
+  transition-duration: 500ms;
 }
 
-.btn>.toggle.isDarkScheme {
-    color: #ffffff;
-    border-color: #ffffff;
+.btn > .toggle.isDarkScheme {
+  color: #ffffff;
+  border-color: #ffffff;
 }
-
