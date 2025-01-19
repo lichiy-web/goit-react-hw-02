@@ -10,7 +10,7 @@ const ColorSchemeSwitch = ({ isDarkScheme, toggleColorScheme }) => {
       onClick={toggleColorScheme}
     >
       <div className={clsx(css.toggle, { [css.isDarkScheme]: isDarkScheme })}>
-        {isDarkScheme ? '☀' : '☾'}{' '}
+        {isDarkScheme ? '☾' : '☀'}{' '}
       </div>
     </button>
   );
