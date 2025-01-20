@@ -5,8 +5,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 import css from './Feedback.module.css';
 import clsx from 'clsx';
 
-const Feedback = ({ reviews, totalFeedback }) => {
-  const positiveFeedback = Math.round((100 * reviews.good) / totalFeedback);
+const Feedback = ({ reviews, totalFeedback, positiveFeedback }) => {
   const transparency = 0.5;
   const data = {
     labels: Object.keys(reviews),

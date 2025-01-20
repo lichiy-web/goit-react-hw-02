@@ -27,6 +27,8 @@ function App() {
     (prev, cur) => (prev += cur)
   );
 
+  const positiveFeedback = Math.round((100 * reviews.good) / totalFeedback);
+
   const updateFeedback = reviewType => {
     setReviews(prev => ({
       ...prev,
@@ -64,7 +66,11 @@ function App() {
           isDarkScheme={isDarkScheme}
         />
         {totalFeedback > 0 ? (
-          <Feedback reviews={reviews} totalFeedback={totalFeedback} />
+          <Feedback
+            reviews={reviews}
+            totalFeedback={totalFeedback}
+            positiveFeedback={positiveFeedback}
+          />
         ) : (
           <Notification />
         )}
